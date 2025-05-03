@@ -1,2 +1,2 @@
 #!/bin/bash
-python main.py
+python $(echo main.py | tr -d '\r')
