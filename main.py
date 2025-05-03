@@ -15,14 +15,14 @@ admin_reply_state = {}
 
 @bot.message_handler(commands=["start"])
 def start_handler(message):
-    bot.send_message(message.chat.id, "👋 Здравстуйте! Напишите своё сообщение для АН BFS.")
+    bot.send_message(message.chat.id, "👋 Привет! Напиши своё сообщение, и мы его передадим администрации.")
 
 @bot.message_handler(func=lambda message: True)
 def user_message_handler(message):
     if message.chat.id in ADMIN_CHAT_IDS and message.chat.id in admin_reply_state:
         # Если админ находится в режиме ответа
         user_id = admin_reply_state.pop(message.chat.id)
-        bot.send_message(user_id, f"📬 Ответ от АН BFS:\n\n{message.text}")
+        bot.send_message(user_id, f"📬 Ответ от администрации:\n\n{message.text}")
         bot.send_message(message.chat.id, "✅ Ответ отправлен.")
     else:
         # Пользователь отправляет сообщение — пересылаем его админам с кнопкой
