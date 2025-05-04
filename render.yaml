@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: telegram-feedback-bot
+    env: python
+    buildCommand: ""
+    startCommand: bash start.sh
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ADMIN_CHAT_IDS
+        sync: false
