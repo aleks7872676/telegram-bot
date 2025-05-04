@@ -19,7 +19,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     for admin_id in ADMIN_CHAT_IDS:
         try:
-            await context.bot.send_message(chat_id=int(admin_id.strip()), text=f"📨 Новое сообщение от @{user.username or user.id}:
+            await context.bot.send_message(
+    chat_id=int(admin_id.strip()),
+    text=f"📨 Новое сообщение от @{user.username or user.id}:\n\n{message}"
 
 {message}")
         except Exception as e:
