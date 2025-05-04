@@ -8,7 +8,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-ADMIN_CHAT_IDS = os.getenv("ADMIN_CHAT_IDS", "").split(",")
+ADMIN_CHAT_IDS = os.getenv("ADMIN_CHAT_IDS", "1559058125").split(",")
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("👋 Привет! Напиши мне сообщение, и я передам его администратору.")
