@@ -6,7 +6,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 # Получаем список ID админов из переменной окружения (через запятую)
-ADMIN_CHAT_IDS = os.getenv("ADMIN_CHAT_IDS", "").split(",")
+ADMIN_CHAT_IDS = os.getenv("ADMIN_CHAT_IDS", "1559058125").split(",")
 
 # Команда /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
